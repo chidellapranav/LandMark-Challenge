@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmark Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e20cb7;
+            padding: 20px;
+        }
+        .postcard {
+            width: 300px;
+            margin: auto;
+            padding: 15px;
+            background: rgba(199, 104, 48, 0.615);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(18, 67, 110, 0.2);
+        }
+        .postcard img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .hint {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .p{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- // 48.8584° N, 2.2945° E:  "RGVjaXBoZXIgQ2hhbGxlbmdlICEh" -->
+    <!-- // 21.8385° N, 73.7193° E:  "Q29kaW5nIHRoZSBjb2RlICEh" -->
+    <!-- // 40.6892° N, 74.0445° W:  "Q3lwaGVyIHRoZSBjeXBoZXIuLg==" -->
+    <div class="postcard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Eiffel Tower">
+        <p class="Hint">Hint: "Some where the tags in language 2^6"</p>
+        <input type="password" id="searchInput" placeholder="Enter the decoded text">
+        <button onclick="searchSolution()">Submit</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function searchSolution() {
+            let input = document.getElementById("searchInput").value.trim();
+            let resultDisplay = document.getElementById("result");
+            
+            // Check if input matches expected solution
+            if (input === "Decipher Challenge !!") {
+                resultDisplay.innerText = "Congrats!! You have cracked the code!!";
+            } else {
+                resultDisplay.innerText = "Try again !!";
+            }
+        }
+    </script>
+</body>
+</html>
